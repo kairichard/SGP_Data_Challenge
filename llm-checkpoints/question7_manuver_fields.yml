@@ -1,0 +1,326 @@
+- BOAT:
+    - Description: Team identifier (e.g., AUS, USA)
+
+- HULL:
+    - Description: Hull identifier matching the boat
+
+- WING_CONFIG_unk:
+    - Description: Wing configuration setting number
+
+- MD4_SEL_DB_unk:
+    - Description: Mode selector setting for daggerboard
+
+- MD4_SEL_RUD_unk:
+    - Description: Mode selector setting for rudder
+
+- DATETIME:
+    - Description: UTC timestamp of the maneuver
+
+- TIME_LOCAL_unk:
+    - Description: Local time of the maneuver
+
+- race:
+    - Description: Race number identifier
+
+- leg:
+    - Description: Current leg number within the race
+
+- type:
+    - Description: Maneuver type (tack or gybe)
+
+- entry_bsp:
+    - Description: Boat speed at maneuver entry (km/h)
+
+- exit_bsp:
+    - Description: Boat speed at maneuver exit (km/h)
+
+- min_bsp:
+    - Description: Minimum boat speed during maneuver (km/h)
+
+- bsp_loss:
+    - Description: Total boat speed lost during maneuver (km/h)
+
+- entry_twa:
+    - Description: True wind angle at maneuver entry (degrees)
+
+- exit_twa:
+    - Description: True wind angle at maneuver exit (degrees)
+
+- orig_entry_twa:
+    - Description: Original true wind angle at entry before normalization (degrees)
+
+- orig_exit_twa:
+    - Description: Original true wind angle at exit before normalization (degrees)
+
+- entry_rh:
+    - Description: Ride height at maneuver entry (mm)
+
+- exit_rh:
+    - Description: Ride height at maneuver exit (mm)
+
+- entry_rh_stability:
+    - Description: Ride height stability metric at entry
+
+- max_yaw_rate:
+    - Description: Maximum yaw rate during maneuver (degrees/second)
+
+- db_down:
+    - Description: Time taken for daggerboard to lower (seconds)
+
+- two_DB_time:
+    - Description: Duration both daggerboards were deployed (seconds)
+
+- two_DB_Broadcast:
+    - Description: Time both daggerboards were reported as deployed (seconds)
+
+- flying:
+    - Description: Binary indicator if boat was foiling (0/1)
+
+- tws:
+    - Description: True wind speed (knots)
+
+- pop_time:
+    - Description: Time taken to pop up onto foils (seconds)
+
+- turn_min_rh:
+    - Description: Minimum ride height during turn (mm)
+
+- t_invert:
+    - Description: Time to invert the boat during maneuver (seconds)
+
+- t_to_lock:
+    - Description: Time to lock in new course (seconds)
+
+- max_lat_gforce:
+    - Description: Maximum lateral g-force experienced
+
+- max_fwd_gforce:
+    - Description: Maximum forward g-force experienced
+
+- max_gforce:
+    - Description: Maximum total g-force experienced
+
+- drop_time_P:
+    - Description: Time to drop port daggerboard (seconds)
+
+- drop_time_S:
+    - Description: Time to drop starboard daggerboard (seconds)
+
+- unstow_time_P:
+    - Description: Time to unstow port daggerboard (seconds)
+
+- unstow_time_S:
+    - Description: Time to unstow starboard daggerboard (seconds)
+
+- stow_time_P:
+    - Description: Time to stow port daggerboard (seconds)
+
+- stow_time_S:
+    - Description: Time to stow starboard daggerboard (seconds)
+
+- boards_up_time_S:
+    - Description: Time starboard boards were up (seconds)
+
+- boards_up_time_P:
+    - Description: Time port boards were up (seconds)
+
+- press_sys_acc_start:
+    - Description: System accumulator pressure at start (PSI)
+
+- press_sys_acc_end:
+    - Description: System accumulator pressure at end (PSI)
+
+- press_sys_acc_delta:
+    - Description: Change in system accumulator pressure (PSI)
+
+- press_rake_acc_start:
+    - Description: Rake accumulator pressure at start (PSI)
+
+- press_rake_acc_end:
+    - Description: Rake accumulator pressure at end (PSI)
+
+- press_rake_acc_delta:
+    - Description: Change in rake accumulator pressure (PSI)
+
+- pump_press_avg:
+    - Description: Average pump pressure during maneuver (PSI)
+
+- pump_press_max:
+    - Description: Maximum pump pressure during maneuver (PSI)
+
+- press_wing_acc_start:
+    - Description: Wing accumulator pressure at start (PSI)
+
+- press_wing_acc_end:
+    - Description: Wing accumulator pressure at end (PSI)
+
+- db_ud_ret_press_s_avg:
+    - Description: Average starboard daggerboard up/down retraction pressure (PSI)
+
+- db_ud_ret_press_s_max:
+    - Description: Maximum starboard daggerboard up/down retraction pressure (PSI)
+
+- db_ud_ret_press_p_avg:
+    - Description: Average port daggerboard up/down retraction pressure (PSI)
+
+- db_ud_ret_press_p_max:
+    - Description: Maximum port daggerboard up/down retraction pressure (PSI)
+
+- db_ud_ext_press_s_avg:
+    - Description: Average starboard daggerboard up/down extension pressure (PSI)
+
+- db_ud_ext_press_s_max:
+    - Description: Maximum starboard daggerboard up/down extension pressure (PSI)
+
+- db_ud_ext_press_p_avg:
+    - Description: Average port daggerboard up/down extension pressure (PSI)
+
+- db_ud_ext_press_p_max:
+    - Description: Maximum port daggerboard up/down extension pressure (PSI)
+
+- entry_heel:
+    - Description: Heel angle at maneuver entry (degrees)
+
+- entry_pitch:
+    - Description: Pitch angle at maneuver entry (degrees)
+
+- exit_heel:
+    - Description: Heel angle at maneuver exit (degrees)
+
+- exit_pitch:
+    - Description: Pitch angle at maneuver exit (degrees)
+
+- turning_time:
+    - Description: Total duration of the turn (seconds)
+
+- t_swap:
+    - Description: Time taken to swap between daggerboards (seconds)
+
+- bsp_at_drop:
+    - Description: Boat speed when daggerboard was dropped (km/h)
+
+- heel_at_drop:
+    - Description: Heel angle when daggerboard was dropped (degrees)
+
+- pitch_at_drop:
+    - Description: Pitch angle when daggerboard was dropped (degrees)
+
+- winward_rh_at_drop:
+    - Description: Windward ride height when daggerboard was dropped (mm)
+
+- db_cant_ret_press_p_avg:
+    - Description: Average port daggerboard cant retraction pressure (PSI)
+
+- db_cant_ret_press_p_max:
+    - Description: Maximum port daggerboard cant retraction pressure (PSI)
+
+- db_cant_ret_press_s_avg:
+    - Description: Average starboard daggerboard cant retraction pressure (PSI)
+
+- db_cant_ret_press_s_max:
+    - Description: Maximum starboard daggerboard cant retraction pressure (PSI)
+
+- db_cant_ext_press_p_avg:
+    - Description: Average port daggerboard cant extension pressure (PSI)
+
+- db_cant_ext_press_p_max:
+    - Description: Maximum port daggerboard cant extension pressure (PSI)
+
+- db_cant_ext_press_s_avg:
+    - Description: Average starboard daggerboard cant extension pressure (PSI)
+
+- db_cant_ext_press_s_max:
+    - Description: Maximum starboard daggerboard cant extension pressure (PSI)
+
+- entry_jib_lead:
+    - Description: Jib lead position at maneuver entry
+
+- exit_jib_lead:
+    - Description: Jib lead position at maneuver exit
+
+- entry_jib_sheet:
+    - Description: Jib sheet tension at maneuver entry
+
+- exit_jib_sheet:
+    - Description: Jib sheet tension at maneuver exit
+
+- entry_jib_sheet_pct:
+    - Description: Jib sheet tension percentage at entry
+
+- exit_jib_sheet_pct:
+    - Description: Jib sheet tension percentage at exit
+
+- max_rudder_angle:
+    - Description: Maximum rudder angle during maneuver (degrees)
+
+- vmg_distance:
+    - Description: Distance made good to wind/leeward mark during maneuver
+
+- b_diff:
+    - Description: Bearing difference
+
+- b_diff_1:
+    - Description: Bearing difference metric 1
+
+- b_diff_2:
+    - Description: Bearing difference metric 2
+
+- avg_TWD:
+    - Description: Average true wind direction during maneuver (degrees)
+
+- distance:
+    - Description: Distance traveled during maneuver
+
+- dist_2:
+    - Description: Secondary distance measurement
+
+- bearing:
+    - Description: Bearing of travel during maneuver (degrees)
+
+- bearing_2:
+    - Description: Secondary bearing measurement (degrees)
+
+- theoretical_vmg:
+    - Description: Theoretical velocity made good
+
+- theoretical_target_vmg:
+    - Description: Target theoretical velocity made good
+
+- theoretical_distance:
+    - Description: Theoretical distance covered
+
+- theoretical_targ_distance:
+    - Description: Target theoretical distance
+
+- loss_vs_vmg:
+    - Description: Performance loss compared to theoretical VMG
+
+- loss_vs_targ_vmg:
+    - Description: Performance loss compared to target VMG
+
+- drop_offset:
+    - Description: Offset distance when dropping daggerboard
+
+- drop_to_wind_axis:
+    - Description: Angle between drop direction and wind axis (degrees)
+
+- htw_bsp:
+    - Description: Head to wind boat speed (km/h)
+
+- entry_cant:
+    - Description: Daggerboard cant angle at entry (degrees)
+
+- exit_cant:
+    - Description: Daggerboard cant angle at exit (degrees)
+
+- cant_drop_target:
+    - Description: Target cant angle for board drop (degrees)
+
+- cant_stow_target:
+    - Description: Target cant angle for board stow (degrees)
+
+- dashboard:
+    - Description: Dashboard configuration or mode
+
+- entry_tack:
+    - Description: Tack at maneuver entry (port/starboard)

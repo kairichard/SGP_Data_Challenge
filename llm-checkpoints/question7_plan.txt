@@ -1,0 +1,101 @@
+# Analysis Plan for VMG Distance Optimization
+
+1. Data Preprocessing:
+   - Remove irrelevant columns:
+     - Identifiers (BOAT, HULL)
+     - Timestamps (DATETIME, TIME_LOCAL_unk)
+     - Post-maneuver calculations (theoretical_*, loss_vs_*)
+     - Dashboard/config settings
+   
+   - Handle missing values
+   - Normalize numerical features
+   - Encode categorical variables (type, entry_tack)
+
+2. Feature Groups for Analysis:
+   
+   A. Entry Conditions:
+      - entry_bsp
+      - entry_twa
+      - entry_rh
+      - entry_heel
+      - entry_pitch
+      - entry_cant
+      - entry_jib_lead
+      - entry_jib_sheet
+      - entry_jib_sheet_pct
+   
+   B. Environmental Conditions:
+      - tws (True Wind Speed)
+      - avg_TWD
+   
+   C. Maneuver Execution:
+      - turning_time
+      - max_yaw_rate
+      - db_down
+      - t_swap
+      - max_rudder_angle
+      - max_lat_gforce
+      - max_fwd_gforce
+   
+   D. Board Control:
+      - db_ud_ret_press_*
+      - db_ud_ext_press_*
+      - db_cant_ret_press_*
+      - db_cant_ext_press_*
+   
+   E. Flight Control:
+      - flying
+      - turn_min_rh
+      - winward_rh_at_drop
+
+3. Analysis Methods:
+
+   A. Feature Importance:
+      - Random Forest Regressor
+      - Gradient Boosting (XGBoost)
+      - SHAP values for feature importance
+   
+   B. Correlation Analysis:
+      - Pearson correlation with vmg_distance
+      - Feature clustering for multicollinearity
+   
+   C. Time Series Analysis:
+      - Analyze pressure sequences
+      - Study timing relationships
+
+4. Model Development:
+   
+   A. Base Models:
+      - Linear Regression (baseline)
+      - Random Forest
+      - XGBoost
+      - LightGBM
+   
+   B. Evaluation Metrics:
+      - R-squared
+      - RMSE
+      - MAE
+      - Feature importance rankings
+
+5. Validation:
+
+   A. Cross-validation:
+      - K-fold for general performance
+      - Time-based splits for temporal effects
+   
+   B. Separate by:
+      - Maneuver type (tack vs gybe)
+      - Wind conditions (light/medium/heavy)
+      - Flying vs non-flying
+
+6. Output:
+
+   A. Key Findings:
+      - Top 10 most influential variables
+      - Critical thresholds for key parameters
+      - Interaction effects between variables
+   
+   B. Recommendations:
+      - Optimal ranges for controllable variables
+      - Risk factors for poor VMG
+      - Setup considerations for different conditions 

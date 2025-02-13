@@ -1,0 +1,159 @@
+- BOAT
+  - description: Boat identifier (e.g., AUS for Australia)
+  - transformation_tacked: none
+
+- DATETIME
+  - description: UTC timestamp
+  - transformation_tacked: none
+
+- TIME_LOCAL_unk
+  - description: Local time (timezone unknown)
+  - transformation_tacked: none
+
+- LATITUDE_GPS_unk
+  - description: GPS latitude coordinate
+  - transformation_tacked: none
+
+- LONGITUDE_GPS_unk
+  - description: GPS longitude coordinate
+  - transformation_tacked: none
+
+- BOAT_SPEED_km_h_1
+  - description: Boat speed in kilometers per hour
+  - transformation_tacked: none
+
+- GPS_SOG_km_h_1
+  - description: GPS Speed Over Ground in km/h
+  - transformation_tacked: none
+
+- HEADING_deg
+  - description: Boat heading in degrees (0-360)
+  - transformation_tacked: if port_tack then (heading + 180) % 360
+
+- TWA_SGP_deg
+  - description: True Wind Angle in degrees (-180 to +180)
+  - transformation_tacked: if port_tack then -TWA_SGP_deg
+
+- TWS_SGP_km_h_1
+  - description: True Wind Speed in km/h
+  - transformation_tacked: none
+
+- TWD_SGP_deg
+  - description: True Wind Direction in degrees (0-360)
+  - transformation_tacked: none
+
+- AWA_SGP_deg
+  - description: Apparent Wind Angle in degrees (-180 to +180)
+  - transformation_tacked: if port_tack then -AWA_SGP_deg
+
+- RATE_YAW_deg_s_1
+  - description: Yaw rate in degrees per second
+  - transformation_tacked: if port_tack then -RATE_YAW_deg_s_1
+
+- GPS_COG_deg
+  - description: GPS Course Over Ground in degrees (0-360)
+  - transformation_tacked: if port_tack then (GPS_COG_deg + 180) % 360
+
+- LEEWAY_deg
+  - description: Leeway angle in degrees (drift angle)
+  - transformation_tacked: if port_tack then -LEEWAY_deg
+
+- VMG_km_h_1
+  - description: Velocity Made Good in km/h
+  - transformation_tacked: none
+
+- ANGLE_CA1_deg through ANGLE_CA6_deg
+  - description: Control surface angles in degrees
+  - transformation_tacked: if port_tack then -ANGLE_CA{n}_deg
+
+- ANGLE_WING_TWIST_deg
+  - description: Wing sail twist angle in degrees
+  - transformation_tacked: if port_tack then -ANGLE_WING_TWIST_deg
+
+- ANGLE_WING_ROT_deg
+  - description: Wing sail rotation angle in degrees
+  - transformation_tacked: if port_tack then -ANGLE_WING_ROT_deg
+
+- PITCH_deg
+  - description: Boat pitch angle in degrees
+  - transformation_tacked: none
+
+- HEEL_deg
+  - description: Boat heel angle in degrees
+  - transformation_tacked: if port_tack then -HEEL_deg
+
+- LENGTH_RH_P_mm
+  - description: Port hull ride height in millimeters
+  - transformation_tacked: if port_tack then LENGTH_RH_S_mm
+
+- LENGTH_RH_S_mm
+  - description: Starboard hull ride height in millimeters
+  - transformation_tacked: if port_tack then LENGTH_RH_P_mm
+
+- LENGTH_RH_BOW_mm
+  - description: Bow ride height in millimeters
+  - transformation_tacked: none
+
+- ANGLE_RUDDER_deg
+  - description: Rudder angle in degrees
+  - transformation_tacked: if port_tack then -ANGLE_RUDDER_deg
+
+- ANGLE_RUD_AVG_deg
+  - description: Average rudder angle in degrees
+  - transformation_tacked: if port_tack then -ANGLE_RUD_AVG_deg
+
+- ANGLE_RUD_DIFF_TACK_deg
+  - description: Rudder differential on tack in degrees
+  - transformation_tacked: if port_tack then -ANGLE_RUD_DIFF_TACK_deg
+
+- ANGLE_DB_RAKE_P_deg
+  - description: Port daggerboard rake angle in degrees
+  - transformation_tacked: if port_tack then ANGLE_DB_RAKE_S_deg
+
+- ANGLE_DB_RAKE_S_deg
+  - description: Starboard daggerboard rake angle in degrees
+  - transformation_tacked: if port_tack then ANGLE_DB_RAKE_P_deg
+
+- ANGLE_DB_CANT_P_deg
+  - description: Port daggerboard cant angle in degrees
+  - transformation_tacked: if port_tack then ANGLE_DB_CANT_S_deg
+
+- ANGLE_DB_CANT_S_deg
+  - description: Starboard daggerboard cant angle in degrees
+  - transformation_tacked: if port_tack then ANGLE_DB_CANT_P_deg
+
+- TRK_LEG_NUM_TOT_unk
+  - description: Total number of legs in track
+  - transformation_tacked: none
+
+- TRK_LEG_NUM_unk
+  - description: Current leg number
+  - transformation_tacked: none
+
+- TRK_RACE_NUM_unk
+  - description: Race number identifier
+  - transformation_tacked: none
+
+- PC_TTS_s
+  - description: Time to start in seconds
+  - transformation_tacked: none
+
+- PC_TTK_s
+  - description: Time to next mark in seconds
+  - transformation_tacked: none
+
+- PC_TTB_s
+  - description: Time to boundary in seconds
+  - transformation_tacked: none
+
+- PC_DTB_m
+  - description: Distance to boundary in meters
+  - transformation_tacked: none
+
+- PC_DTL_m
+  - description: Distance to leader in meters
+  - transformation_tacked: none
+
+- PC_TTM_s
+  - description: Time to next mark in seconds
+  - transformation_tacked: none 

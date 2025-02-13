@@ -1,0 +1,84 @@
+# Distance to Leader (DTL) Metric Implementation Requirements
+
+## Overview
+Calculate a Distance to Leader metric for each boat given position data and course XML.
+
+## Data Requirements
+1. Input Data:
+   - Boat position timeseries (Lat/Lon) for all boats
+   - Race course XML defining:
+     * Mark positions
+     * Gate locations
+     * Course boundaries
+     * Leg definitions
+   - Synchronized timestamps across all boats
+
+## Core Components
+
+### 1. Race Progress Tracking
+- Calculate percentage completion along current leg
+- Identify active leg for each boat
+- Handle mark roundings and leg transitions
+- Account for upwind/downwind/reaching legs
+
+### 2. Distance Calculations
+- Direct distance to leader
+- Distance along race course
+- Account for:
+  * Different legs
+  * Course boundaries
+  * Tactical considerations
+  * Mark rounding zones
+
+### 3. Leader Identification
+- Determine current leader at each timestamp
+- Handle boats on different legs
+- Consider course progress not just physical position
+- Validate against known race results
+
+## Implementation Steps
+
+1. Data Processing
+   - Parse XML course data
+   - Load all boat position data
+   - Synchronize timestamps
+   - Clean/filter noisy data
+
+2. Course Representation
+   - Define legs and gates
+   - Create waypoints/checkpoints
+   - Calculate optimal routes between marks
+   - Define mark rounding zones
+
+3. Progress Calculator
+   - Project boat positions onto course legs
+   - Calculate % progress on each leg
+   - Handle transitions between legs
+   - Validate progress calculations
+
+4. DTL Calculator
+   - Identify leader at each timestamp
+   - Calculate distance behind leader
+   - Account for different legs/tactics
+   - Generate continuous DTL metric
+
+5. Visualization/Validation
+   - Plot DTL over time
+   - Validate at mark roundings
+   - Compare with race results
+   - Performance testing
+
+## Key Challenges
+- Handling boats on different legs
+- Accounting for course boundaries
+- Dealing with missing/noisy data
+- Validating distance calculations
+- Performance optimization for real-time use
+- Handling special cases (penalties, retirements)
+
+## Success Criteria
+- Accurate leader identification
+- Consistent DTL measurements
+- Handle all course configurations
+- Real-time capable
+- Validated against known race outcomes 
