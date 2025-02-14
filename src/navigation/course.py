@@ -171,8 +171,8 @@ def calculate_track_vmc(
 
 
 def add_own_mark_tracking(
-    boat_data: pd.DataFrame, course: List[CompoundMark]
-) -> pd.DataFrame:
+    boat_data: DataFrame[BoatDataSchema], course: List[CompoundMark]
+) -> DataFrame[BoatDataSchema]:
     """
     Add mark tracking columns to boat data:
     - next_mark: Name of the next mark to round

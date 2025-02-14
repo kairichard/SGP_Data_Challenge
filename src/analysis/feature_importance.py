@@ -4,9 +4,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import pandera as pa
+from pandera.typing import DataFrame
 import shap
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 
+from src.models.dataframes import ManeuverDataSchema
 from src.transformations.maneuver_processor import ManeuverProcessor
 
 
@@ -19,7 +22,8 @@ class FeatureImportanceAnalyzer:
         self.gb_model = GradientBoostingRegressor(n_estimators=100, random_state=42)
         self.feature_importance_results = {}
 
-    def fit(self, df: pd.DataFrame) -> None:
+    @pa.check_types
+    def fit(self, df: DataFrame[ManeuverDataSchema]) -> None:
         """
         Fit models and calculate feature importance
 

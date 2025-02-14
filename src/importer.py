@@ -3,12 +3,12 @@ from pathlib import Path
 
 import pandas as pd
 from pandera.typing import DataFrame
-
+import pandera as pa
 from src.models.dataclasses import Boundary, CompoundMark, Mark, Race
-from src.models.dataframes import PolarDataSchema
+from src.models.dataframes import BoatDataSchema, ManeuverDataSchema, PolarDataSchema
 
-
-def import_boat_log(file_path: Path | str) -> pd.DataFrame:
+@pa.check_types
+def import_boat_log(file_path: Path | str) -> DataFrame[BoatDataSchema]:
     """
     Import a single boat log CSV file and add boat identifier metadata.
 
@@ -43,7 +43,8 @@ def import_boat_log(file_path: Path | str) -> pd.DataFrame:
     return df
 
 
-def import_boat_logs(directory: str = "Data/Boat_Logs") -> pd.DataFrame:
+@pa.check_types
+def import_boat_logs(directory: str = "Data/Boat_Logs") -> DataFrame[BoatDataSchema]:
     """
     Import all boat log CSV files from a directory, adding the boat identifier
     from the filename as a column.
@@ -196,7 +197,8 @@ def load_polar_data(filepath: str) -> DataFrame[PolarDataSchema]:
     return df
 
 
-def import_maneuver_summary(file_path: Path | str) -> pd.DataFrame:
+@pa.check_types
+def import_maneuver_summary(file_path: Path | str) -> DataFrame[ManeuverDataSchema]:
     """
     Import maneuver summary CSV file with proper datetime parsing.
 
